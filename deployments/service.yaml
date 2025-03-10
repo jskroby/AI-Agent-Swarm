@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ai-agent-swarm-service
+spec:
+  selector:
+    app: ai-agent-swarm
+  ports:
+  - protocol: TCP
+
+    port: 80*
+    targetPort: 80
+  type: LoadBalancer
