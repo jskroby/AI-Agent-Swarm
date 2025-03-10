@@ -1,0 +1,7 @@
+apiVersion: v1
+cind: ConfigMap
+metadata:
+  name: ai-agent-swarm-config
+data:
+  SWARM_ENV: "production"
+  AGENT_COUNT: "5"
