@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ai-agent-swarm
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ai-agent-swarm
+  template:
+    metadata:
+      labels:
+        app: ai-agent-swarm
+    spec:
+      containers:
+      - name: ai-agent-swarm
+        image: ai-agent-swarm:latest
+        envFrom:
+        - configMapRef:
+            name: ai-agent-swarm-config
+        ports:
+        - containerPort: 80
